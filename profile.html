@@ -125,82 +125,60 @@ Purchase Premium Metronic Admin Theme: http://themeforest.net/item/metronic-resp
 							<img class="img-responsive" ng-src="{{img}}" ng-show="checkPhoto($index)">
                         </div>
                         <div class="image-date">                
-                            <h6 style="font-size: 14px; color: #8693a7;"><strong>Date: </strong>2016 May 21</h6>
+							<h6 style="font-size: 14px; color: #8693a7;"><strong>Date: </strong>2016 May {{get_day(activePhoto)}}</h6>
                         </div>
                         <div class="image-controller">                       
-							{{start}}
-                            <input type="range" min="0" max="100" step="1" name="range" ng-model="activePhoto">                                        
-							{{end}}
-                            <input type="range" min="-100" max="100" value="0" step="10" name="power" list="powers">
-                            <h6 style="font-size: 14px; color: #8693a7; text-align: center;">Range</h6>
+                            <input type="range" min="0" max="10" step="1" name="range" ng-model="activePhoto">                                        
+                            <h6 style="font-size: 14px; color: #8693a7; text-align: center;">Timeline</h6>
                         </div>
                         <div class="profile-status">
                             <div class="">
                                 <div class="pro-status no-left-brd">
-                                    <img src="assets/onepage2/img/widgets/icon6.png" alt="">
-                                    <h4>BMI Status</h4>
-                                    <span>Challenge Last Week</span>
-                                    <ul class="pro-status-features">
-                                        <li>First weight: 55kg</li>
-                                        <li>Last week weight: 54kg</li>
-                                        <li>Today weight: 53kg</li>
-                                        <li>Challenger weight: 2kg</li>
-                                    </ul>
-                                    <button type="button" class="btn-brd-primary">Now Add Photo</button>
+									<span>Weight: {{get_weight(activePhoto)}} kg<br><br></span>
+                                    <button type="button" class="btn-brd-primary">Add Photo</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="profile-comment">
+               		 <div class="profile-comment">
                     <div class="c-comments">
                         <div class="c-content-title-1">
                             <h3 class="c-font-uppercase c-font-bold">Comments(30)</h3>
                             <div class="c-line-left"></div>
                         </div>
-                        <div class="c-comment-list">
                             <div class="media">
                                 <div class="media-left">
                                     <a href="#">
-                                        <img class="media-object" alt="" src="assets/base/img/content/team/team1.jpg"> </a>
+                                        <img class="media-object" alt="" src="images/profile-m.jpg" height="40px" width="40px"> </a>
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">
-                                        <a href="#" class="c-font-bold">A.Darkhan</a> on
-                                        <span class="c-date">23 May 2015, 10:40AM</span>
-                                    </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-left">
-                                    <a href="#">
-                                        <img class="media-object" alt="" src="assets/base/img/content/team/team3.jpg"> </a>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">
-                                        <a href="#" class="c-font-bold">B.Batchunag</a> on
-                                        <span class="c-date">21 May 2015, 11:40AM</span>
-                                    </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
+                                        <a href="#" class="c-font-bold">Macho</a> on
+										<span class="c-date">{{get_day(activePhoto)}} May 2015, 11:40AM</span>
+									</h4> {{comment_template[get_comment_number()]}}
                                     <div class="media">
                                         <div class="media-left">
                                             <a href="#">
-                                                <img class="media-object" alt="" src="assets/base/img/content/team/team4.jpg"> </a>
+                                                <img class="media-object" alt="" src="images/profile-d.jpg" height="40px" width="40px"> </a>
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading">
                                                 <a href="#" class="c-font-bold">A.Darkhan</a> on
-                                                <span class="c-date">30 May 2015, 9:40PM</span>
-                                            </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. </div>
+												<span class="c-date">{{get_day(activePhoto)}} May 2015, 9:40PM</span>
+										</h4> {{answer_template[get_answer_number()]}}
+									</div>
                                     </div>
                                 </div>
-                            </div>
                             <div class="media">
                                 <div class="media-left">
                                     <a href="#">
-                                        <img class="media-object" alt="" src="assets/base/img/content/team/team7.jpg"> </a>
+                                        <img class="media-object" alt="" src="images/photo8.jpg" height="40px" width="40px"> </a>
                                 </div>
                                 <div class="media-body">
                                     <h4 class="media-heading">
-                                        <a href="#" class="c-font-bold">Tuvshuu</a> on
-                                        <span class="c-date">30 May 2015, 9:40PM</span>
-                                    </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. </div>
+                                        <a href="#" class="c-font-bold">Mr.Angel</a> on
+										<span class="c-date">{{get_day(activePhoto)}} May 2015, 12:40PM</span>
+									</h4> {{comment_template[get_comment_number()]}}
+								</div>
                             </div>
                         </div>
                         <div class="c-content-title-1">
